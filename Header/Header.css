@@ -1,0 +1,114 @@
+/*==========================================================
+					Header
+============================================================*/
+/*HEADER NAVIGATION*/
+.header
+{
+	background: url("../Images/cityEdit.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 -3vmax;
+	padding-bottom: 4vmin;
+
+	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+}
+
+.headerNavigation
+{
+	/*background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 -3vmax;
+	border: 1px solid rgba(255, 255, 255, 0.3);*/
+
+	/*-moz-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.7);*/
+
+	width: 100%;
+	padding-top: 2vmax;
+	margin-bottom: 2vmax;
+}
+.headerNavigation .headerNavTable
+{
+	width: 80%;
+
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 -3vmax;
+
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+
+	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+
+	padding-top: 2vmax;
+}
+.headerNavigation .headerNavTable .nav
+{
+	width: 60%;
+	vertical-align: text-top;
+}
+
+.headerNavigation .headerNavTable .nav a
+{
+	padding: 1em;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	-moz-box-shadow: 0 1.5vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 1.5vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1.5vmin 2vmin rgba(0, 0, 0, 0.7);
+	border-radius: 5px;
+	margin-left: 5px;
+}
+.headerNavigation .headerNavTable .nav a:hover{
+	background-color: rgba(0, 255, 255, 0.6);
+	border-radius: 5px;
+}
+
+.headerNavigation .headerNavTable .extra
+{
+	width: 20%;
+	vertical-align: text-top;
+}
+
+/*HEADER CONTENT*/
+.headerContent
+{
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 -3vmax;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+
+	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+
+	width: 50%;
+	padding-top: 5vmin;
+	padding-bottom: 5vmin;
+}
+.headerContentTable
+{
+	width: 100%;
+}
+img 
+{
+	width: 10vmax;
+	position: relative;
+	top: -2vmin;
+}

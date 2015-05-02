@@ -1,0 +1,121 @@
+.content
+{
+	width: 70%;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5vmax;
+	padding: 3vmin;
+	/*padding-left: 12vmax;
+	padding-right: auto;*/
+}
+
+h1
+{
+	color: gainsboro;
+}
+
+.content .contentTable
+{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.leftColumn
+{
+	height: 100%;
+	padding-right: 3vmax;
+}
+
+.rightColumn
+{
+	height: 100%;
+}
+
+.content div
+{
+	
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background-attachment: fixed;
+	background-position: bottom; 
+	background-repeat: no-repeat;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+
+	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+
+	/*margin-left: 3vmax;*/
+	padding-top: 2vmax;
+	padding-bottom: 2vmax;
+	padding-left: 2vmax;
+	padding-right: 2vmax;
+}	
+
+#details
+{
+	margin-bottom: 2vmax;
+}
+
+.leftColumn
+{
+	width: 26vmax;
+}
+
+#askAQuestion
+{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+#askAQuestion h2
+{
+	margin-bottom: 1vmin;
+	margin-left: 2vmax;
+	margin-top: 2vmax;
+}
+
+input
+{
+	margin-left: 2vmin;
+	padding: 0.5vmax;
+}
+
+textarea
+{
+	margin-left: 2vmin;
+	padding: 0.5vmax;
+	width: 90%;
+}
+
+input[type="text"], textarea 
+{
+
+  /*background-color : #d1d1d1; */
+  background-color : #818181;
+  color: white;
+
+}
+
+#name
+{
+	width: 30%;
+}
+
+#email
+{
+	width: 54.4%;
+}
+
+#submit
+{
+	padding-left: 2vmax;
+	padding-right: 2vmax;
+	margin-left: 40%;
+	margin-right: auto;
+	background-color : royalblue;
+}
