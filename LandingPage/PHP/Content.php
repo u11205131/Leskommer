@@ -6,12 +6,18 @@
 <!-- CONTENT SECTION -->
 <div class="content" align="center">
 	<div class="contentLink">
-		<a href="../Services/services.php">SERVICES</a>
+		<a href="../Services/services.php">
+			<div class="insideContentLink"><p>SERVICES</p></div>
+		</a>
 	</div>
 	<div class="contentLink">
-		<a href="../About/about.php">ABOUT US</a>
+		<a href="../About/about.php">
+			<div class="insideContentLink"><p>ABOUT US</p></div>
+		</a>
 	</div>
 	<div class="contentLink">
-		<a href="../ContactUs/contactUs.php">CONTACT US</a>
+		<a href="../ContactUs/contactUs.php">
+			<div class="insideContentLink"><p>CONTACT US</p></div>
+		</a>
 	</div>
 </div>

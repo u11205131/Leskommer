@@ -4,12 +4,12 @@
 .content
 {
 	width: 100%;
-	height: 20em;
+	height: 20vmax;
 	padding-top: 5vmax;
 	/*padding-top: 5%;*/
 }
 
-.content .contentLink
+.content .insideContentLink
 {
 	background: url("../../Images/HexBG.gif");
 	/*background-attachment: fixed;*/
@@ -45,9 +45,14 @@
     top: -12.8vmax;
 }
 
-.content .contentLink a
+.contentLink
+{
+	width: 11vmax;
+}
+
+.insideContentLink p
 {
 	position: relative;
-	top: 5vmax;
+	top: 5.4vmax;
 	font-size: 1.4vmax;
 }
