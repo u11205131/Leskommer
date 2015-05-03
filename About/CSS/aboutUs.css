@@ -1,15 +1,30 @@
 .content
 {
-	margin-top: 3vmax;
+	margin-top: 5vmax;
+	width: 100%;
 }
 
-h1
+h1 
 {
 	color: gainsboro;
 	text-align: center;
 }
 
-ul
+h2
+{
+	font-size: 2vmax;
+}
+
+.content table
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5vmax;
+	padding-left: 1.8vmax;
+}
+
+
+table div
 {
 	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
 	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
@@ -23,22 +38,15 @@ ul
 	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 
-	width: 25%;
-	margin-top: 3vmax;
-	padding-top: 4vmax;
-	padding-bottom: 1vmax;
-	padding-left: 0.5vmax;
-	padding-right: 0.5vmax;
+	height: 12vmax;
+	width: 8vmax;
+	padding: 2vmax;
+	margin-right: 2vmax;
+
+	text-align: center;
 }
 
-ul li
+p
 {
-	margin-bottom: 3vmax;
-}
-
-ul li a
-{
-	font-size: 1.5vmax;
-	font-family: Blackout Midnight;
-    letter-spacing: 0.2vmax;
+	margin-top: 8vmax;
 }

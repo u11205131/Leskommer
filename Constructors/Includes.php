@@ -17,7 +17,6 @@
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../Header/Header.css">
-
 <link rel="stylesheet" type="text/css" href="../Footer/footer.css">
 
 <?php if($page == "Home"){ ?>
@@ -34,4 +33,8 @@
 
 <?php if($page == "Services"){ ?>
 	<link rel="stylesheet" type="text/css" href="../Services/CSS/services.css">
+<?php } ?>
+
+<?php if($page == "About"){ ?>
+	<link rel="stylesheet" type="text/css" href="../About/CSS/aboutUs.css">
 <?php } ?>

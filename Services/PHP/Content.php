@@ -1,6 +1,8 @@
 
 <div class="content" align="center">
-	<h2>Services Content</h2>
-	<a href="../Calculator/calculator.php">Calculator</a>
-	<a href="../TipsTricks/tipsTricks.php">Tips & Tricks</a>
+	<h1>Services Content</h1><br><br>
+	<ul>
+		<li><a href="../Calculator/calculator.php">Calculator</a></li>
+		<li><a href="../TipsTricks/tipsTricks.php">Tips & Tricks</a></li>
+	</ul>
 </div>
