@@ -39,7 +39,7 @@
 	<link rel="stylesheet" type="text/css" href="../About/CSS/aboutUs.css">
 <?php } ?>
 
-<?php if($page == "Tips_Tricks"){ ?>
+<?php if($page == "Tips"){ ?>
 	<link rel="stylesheet" type="text/css" href="../TipsTricks/CSS/tipsTricks.css">
 <?php } ?>
 
