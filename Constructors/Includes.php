@@ -38,3 +38,11 @@
 <?php if($page == "About"){ ?>
 	<link rel="stylesheet" type="text/css" href="../About/CSS/aboutUs.css">
 <?php } ?>
+
+<?php if($page == "Tips_Tricks"){ ?>
+	<link rel="stylesheet" type="text/css" href="../TipsTricks/CSS/tipsTricks.css">
+<?php } ?>
+
+<?php if($page == "Calculator"){ ?>
+	<link rel="stylesheet" type="text/css" href="../Calculator/CSS/calculator.css">
+<?php } ?>
