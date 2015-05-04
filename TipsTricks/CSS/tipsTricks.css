@@ -1,0 +1,15 @@
+.content
+{
+	width: 70%;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2vmax;
+	padding: 3vmin;
+	text-align: center;
+}
+
+h1
+{
+	color: gainsboro;
+}

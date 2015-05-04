@@ -6,7 +6,7 @@ function calcReplaceItems(el){
 	var tr = createElement("tr");
 
 	var tdRem = createElement("td");
-	var imgRem = createElement("img", ["src", "../Images/addUp.gif"], ["onclick", "removeItemRow(this)"]);
+	var imgRem = createElement("img", ["src", "../Images/addUp.gif"], ["onclick", "removeItemRow(this)"], ["class", "minus"]);
 	tdRem.appendChild(imgRem);
 
 	var tdName = createElement("td");

@@ -35,7 +35,7 @@ body
 	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 
 	font-weight: bold;
-	/*height: 100%;*/
+	padding-bottom: 1vmax;
 }
 
 .footer .footerTable tr:first-of-type th

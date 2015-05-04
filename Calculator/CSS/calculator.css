@@ -2,13 +2,150 @@
 				Calculator Page Content
 ============================================================*/
 
+h1
+{
+	color: gainsboro;
+}
+
 .content
 {
 	width: 100%;
-	height: 20em;
 	margin-top: 3vmax;
 }
 
-.content img{
-	width: 20px;
+.tab
+{
+	width: 80%;
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background-attachment: fixed;
+	background-position: bottom; 
+	background-repeat: no-repeat;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+
+	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+
+	margin-top: 3vmax;
+	padding-top: 5vmax;
+	min-height: 22vmax;
+}
+
+.plus
+{
+	background: url("../../Images/addUp.gif");
+	width: 3vmax;
+	position: relative;
+	top: 0.1vmax;
+}
+
+.plus:active
+{
+	background: url("../../Images/addDown.gif");
+	width: 2.9vmax;
+	position: relative;
+	top: 0.1vmax;
+}
+
+.minus
+{
+	background: url("../../Images/addUp.gif");
+	width: 3vmax;
+	position: relative;
+	top: 0.1vmax;
+}
+
+.minus:active
+{
+	background: url("../../Images/addDown.gif");
+	width: 2.9vmax;
+	position: relative;
+	top: 0.1vmax;
+}
+
+.leftColumn
+{
+	width: 30vmax;
+	float: left;
+	display: block;
+	text-align: center;
+	margin-left: 3vmax;
+}
+
+.rightColumn
+{
+	position: relative;
+	left: 16vmax;
+	width: 30vmax;
+	display: block;
+	margin-bottom: 3vmax;
+	border-left: solid 1px #A1A1A1;
+}
+
+.leftColumn tr
+{
+	height: 2vmax;
+}
+
+.leftColumn td
+{
+	padding-left: 1vmax;
+	padding-right: 1vmax;
+}
+
+#tableReplace
+{
+	text-align: center;
+	position: relative;
+	left: -4vmax;
+	width: 100%;
+	padding-bottom: 2vmax;
+}
+
+#tableReplace th
+{
+	font-size: 1vmax;
+    letter-spacing: 0.1vmax;
+	font-family: Blackout Midnight;
+	padding-bottom: 3.0vmax;
+}
+
+.leftColumn input, .leftColumn textarea, .leftColumn select  
+{
+	background-color : #818181;
+	color: white;
+	padding-left: 0.5vmax;
+	padding-top: 0.3vmax;
+	padding-bottom: 0.3vmax;
+	width: 7vmax;
+}
+
+.leftColumn label
+{
+	font-size: 1vmax;
+    letter-spacing: 0.1vmax;
+	font-family: Blackout Midnight;
+}
+
+.leftColumn div:nth-of-type(2)
+{
+	margin-top: 5vmax;
+}
+
+select
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("../../Images/down_arrow_select.gif") no-repeat right #ddd;
+	background-size: 1.5vmax;
+	padding-right: 2vmax;
+}
+
+input[type="radio"]
+{
+	width: 1vmax;
+	margin-left: 2vmax;
 }
