@@ -21,10 +21,10 @@
 				<tr><td><a href="../ContactUs/contactUs.php">Contact Us</a></td></tr>
 			</table></td>
 			<td><table align="center">
-				<tr><td><a href="#">Facebook</a></td></tr>
-				<tr><td><a href="#">Twitter</a></td></tr>
-				<tr><td><a href="#">Pinterest</a></td></tr>
-				<tr><td><a href="#">Instagram</a></td></tr>
+				<tr><td><a href="https://www.facebook.com/" target="_blank">Facebook</a></td></tr>
+				<tr><td><a href="https://twitter.com/?lang=en" target="_blank">Twitter</a></td></tr>
+				<tr><td><a href="https://www.pinterest.com/" target="_blank">Pinterest</a></td></tr>
+				<tr><td><a href="https://instagram.com/" target="_blank">Instagram</a></td></tr>
 			</table></td>
 		</tr>
 	</table>
