@@ -51,7 +51,7 @@ h1
 
 .minus
 {
-	background: url("../../Images/addUp.gif");
+	background: url("../../Images/removeUp.png");
 	width: 3vmax;
 	position: relative;
 	top: 0.1vmax;
@@ -59,7 +59,7 @@ h1
 
 .minus:active
 {
-	background: url("../../Images/addDown.gif");
+	background: url("../../Images/removeDown.png");
 	width: 2.9vmax;
 	position: relative;
 	top: 0.1vmax;

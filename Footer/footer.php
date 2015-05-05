@@ -11,7 +11,7 @@
 		<tr>
 			<th class="nav">Navigation</th>
 			<th class="social">Social</th>
-			<th class="logo" rowspan="2"><img src="../Images/logo.gif" alt="LESKOMMER_LOGO" width="50px"/></th>
+			<th class="logo" rowspan="2"><img src="../Images/LogoTransparentSmall.png" alt="LESKOMMER_LOGO" width="50px"/></th>
 		</tr>
 		<tr>
 			<td><table align="center">
