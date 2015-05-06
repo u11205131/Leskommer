@@ -10,7 +10,7 @@
 			<tr>
 				<td class="logo" align="center">
 					<!-- LOGO -->
-					<img src="../Images/LogoTransparentSmall.png" alt="LESKOMMER_LOGO" width="50px"/>
+					<img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/>
 				</td>
 				<td class="nav" align="center">
 					<!-- NAVIGATION LINKS -->

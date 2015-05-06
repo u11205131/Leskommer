@@ -16,7 +16,7 @@
 		<?php include "../Header/Header.php" ?>
 
 		<!--CONTENT PHP-->
-		<?php include "PHP/Content.php" ?>
+		<?php include "PHP/content.php" ?>
 
 		<!--SIDEBAR PHP (IF NEEDED)-->
 

@@ -7,6 +7,7 @@ Home page for the website app, all other pages will be acessable through this pa
 	<head>
 		<meta charset="UTF-8"/>
 
+		<link rel="shortcut icon" href="../Images/LogoIco.gif" />
 		<!-- CSS -->
 		<?php $page="Home"; include "../Constructors/Includes.php" ?>
 	</head>
