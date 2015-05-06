@@ -6,8 +6,7 @@
 			<td class="leftColumn">
 				<div id="details">
 					<h2>Details:</h2><br/>
-					<span>Tel: 000-000 00</span><br>
-					<span>E-mail: leskommersolutions@gmail.com</span>
+					<span>E-mail: <a href="mailto:info@leskommer.co.za" target="_blank">info@leskommer.co.za</a></span>
 				</div>
 			</td>
 			<td rowspan="2" class="rightColumn">
@@ -29,10 +28,10 @@
 				<div id="socialMedia">
 					<h2>Social media:</h2><br/>
 					<!-- GRID OF IMAGES-->
-					<span>FACEBOOK</span>
-					<span>PLUS</span><br>
-					<span>TWITTER</span>
-					<span>PINTEREST</span>
+					<a class="socialMedia" href="https://www.facebook.com/pages/Leskommer/738592899593662" target="_blank"><img src="../../Images/SocialMediaIcons/Facebook.png" alt="FACEBOOK"/></a>
+					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Plus.png" alt="GOOGLE PLUS"/></a>
+					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Twitter.png" alt="TWITTER"/></a>
+					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Pinterest.png" alt="PINTEREST"/></a>
 				</div>
 			</td>
 		</tr>
@@ -45,25 +44,27 @@
 <?php 
     if(isset($_POST['submit']))
     {
-        $to = "leskommersolutions@gmail.com"; // this is your Email address
-        $from = $_POST['email']; // this is the sender's Email address
-        $name = $_POST['name'];
-        $subject = "User question";
+        $serverMail = "info@leskommer.co.za"; // This is the server's mail address
+	//$serverMail = $_POST['email'];
+        $userMail = $_POST['email']; // this is the sender's Email address
+        $time = date("Ymd:hisa");
+	$name = $_POST['name'];
+        $toServerSubject = "Enquiry by User";
+        $toUserSubject = "Enquiry to Leskommer";
         $question = $_POST['question'];
-        $message = $name . " wrote the following:" . "\n\n" . $question;
-        $message2 = "Here is a copy of your message " . $name . "\n\n" . $question;
-        $time = date("h-i-sa");
+        $msgToServer = $name . " wrote the following:\n\n" . $question;
+        $msgToUser = $name . ", here is a copy of your message to the folks at Leskommer:\n\n" . $question;
         
         //Create textfile that stores user data
-        $myfile = fopen("../Correspondence/".$name."User".$time.".txt", "w") or die("Unable to open file!");
-        $txt = "Name: ".$name."\n Email: ".$from."\n Question: ".$question;
+        $myfile = fopen("../Correspondence/".$name.$time.".txt", "w") or die("Unable to open file!");
+        $txt = "Name: ".$name."\n Email: ".$userMail."\n Question: ".$question;
         fwrite($myfile, $txt);
         fclose($myfile);
 
-        //Sending the email PROBLEM
-        $headers = "From: $from";
-        $headers2 = "From: $to";
-        mail($to,$subject,$message, $headers);
-        mail($from,$subject,$message2, $headers2); // sends a copy of the message to the sender
+        //Sending the email
+        $toServerHeader = "From: $userMail";
+        $toUserHeader = "From: $serverMail";
+        mail($serverMail, $toServerSubject, $msgToServer, $toServerHeader); // sends a copy of the message to the server
+        mail($userMail, $toUserSubject, $msgToUser, $toUserHeader); // sends a copy of the message to the user
      }
 ?>

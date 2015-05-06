@@ -119,3 +119,9 @@ input[type="text"], textarea
 	margin-right: auto;
 	background-color : royalblue;
 }
+
+.socialMedia
+{
+	display: block;
+	width: 30px;
+}
