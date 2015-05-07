@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 
+		<link rel="shortcut icon" href="../Images/LogoIco.gif" />
 		<!-- INCLUDES -->
 		<?php $page="Services"; include "../Constructors/Includes.php" ?>
 	</head>

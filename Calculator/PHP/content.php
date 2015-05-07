@@ -19,10 +19,11 @@
 							<tr>
 								<td>
 									<select name="lights">
-										<option value="light1">light1</option>
-										<option value="light2">light2</option>
-										<option value="light3">light3</option>
-										<option value="light4">light4</option>
+										<option value="Incandescent">Incandescent</option>
+										<option value="Halogen">Halogen</option>
+										<option value="Fluorescent">Fluorescent</option>
+										<option value="Compact Fluorescent">Compact Fluorescent</option>
+										<option value="LED">LED</option>
 									</select>
 								</td>
 								<td>
@@ -30,11 +31,12 @@
 										<option value="15">15</option>
 										<option value="30">30</option>
 										<option value="50">50</option>
+										<option value="60">50</option>
 										<option value="75">75</option>
 									</select>
 								</td>
 								<td>
-									<input name="hoursOp" type="number" placeholder="Hours">
+									<input name="hoursOp" type="number" min="0" step="0.5" placeholder="Hours" value="1">
 								</td>
 								<td><img src="../Images/addUp.gif" class="plus" id="addCalc" onclick="calcReplaceItems(this)"/></td>
 							</tr>
@@ -54,8 +56,9 @@
 			<table id="tableReplace">
 				<tr>
 					<th><!-- DUMMY --></th>
+					<th>Current Item</th>
 					<th>Replacement Item</th>
-					<th>Money Saved</th>
+					<th>Money Saved PM</th>
 				</tr>
 			</table>
 		</div>

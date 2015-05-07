@@ -8,6 +8,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 
+		<link rel="shortcut icon" href="../Images/LogoIco.gif" />
 		<!-- INCLUDES -->
 		<?php $page="Calculator"; include "../Constructors/Includes.php" ?>
 	</head>

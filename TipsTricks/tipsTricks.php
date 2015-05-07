@@ -8,6 +8,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 
+		<link rel="shortcut icon" href="../Images/LogoIco.gif" />
 		<!-- INCLUDES -->
 		<?php $page="Tips"; include "../Constructors/Includes.php" ?>
 	</head>
@@ -16,7 +17,7 @@
 		<?php include "../Header/Header.php" ?>
 
 		<!--CONTENT PHP-->
-		<?php include "PHP/Content.php" ?>
+		<?php include "PHP/content.php" ?>
 
 		<!--SIDEBAR PHP (IF NEEDED)-->
 

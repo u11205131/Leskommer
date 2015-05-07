@@ -11,7 +11,7 @@
 		<tr>
 			<th class="nav">Navigation</th>
 			<th class="social">Social</th>
-			<th class="logo" rowspan="2"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></th>
+			<th class="logo" rowspan="2"><a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a></th>
 		</tr>
 		<tr>
 			<td><table align="center">
@@ -21,10 +21,10 @@
 				<tr><td><a href="../ContactUs/contactUs.php">Contact Us</a></td></tr>
 			</table></td>
 			<td><table align="center">
-				<tr><td><a href="https://www.facebook.com/" target="_blank">Facebook</a></td></tr>
-				<tr><td><a href="https://twitter.com/?lang=en" target="_blank">Twitter</a></td></tr>
-				<tr><td><a href="https://www.pinterest.com/" target="_blank">Pinterest</a></td></tr>
-				<tr><td><a href="https://instagram.com/" target="_blank">Instagram</a></td></tr>
+				<tr><td><a href="https://www.facebook.com/pages/Leskommer/738592899593662" target="_blank">Facebook</a></td></tr>
+				<tr><td><a href="https://twitter.com/Leskommer" target="_blank">Twitter</a></td></tr>
+				<!--<tr><td><a href="https://www.pinterest.com/" target="_blank">Pinterest</a></td></tr>
+				<tr><td><a href="https://instagram.com/" target="_blank">Instagram</a></td></tr>-->
 			</table></td>
 		</tr>
 	</table>

@@ -10,7 +10,7 @@
 			<tr>
 				<td class="logo" align="center">
 					<!-- LOGO -->
-					<img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/>
+					<a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a>
 				</td>
 				<td class="nav" align="center">
 					<!-- NAVIGATION LINKS -->
@@ -18,9 +18,10 @@
 						echo buildNavigation($page);
 					?>
 				</td>
-				<td class="extra" align="center">
+				<!--<td class="extra" align="center">-->
+				<td class="logo" align="center">
 					<!-- EXTRA LINKS, SOCIAL MEDIA OR ACCOUNTS -->
-					<a href="#">FacebookToets</a>
+					<a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a>
 				</td>
 			</tr>
 		</table>

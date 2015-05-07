@@ -29,6 +29,7 @@ ul
 	padding-bottom: 1vmax;
 	padding-left: 0.5vmax;
 	padding-right: 0.5vmax;
+	list-style-type: none;
 }
 
 ul li

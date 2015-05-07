@@ -9,7 +9,7 @@
 					<span>E-mail: <a href="mailto:info@leskommer.co.za" target="_blank">info@leskommer.co.za</a></span>
 				</div>
 			</td>
-			<td rowspan="2" class="rightColumn">
+			<td rowspan="4" class="rightColumn">
 				<div id="askAQuestion">
 					<h2>Ask a Question</h2><br/>
 
@@ -26,12 +26,18 @@
 		<tr>
 			<td class="leftColumn">
 				<div id="socialMedia">
-					<h2>Social media:</h2><br/>
-					<!-- GRID OF IMAGES-->
-					<a class="socialMedia" href="https://www.facebook.com/pages/Leskommer/738592899593662" target="_blank"><img src="../../Images/SocialMediaIcons/Facebook.png" alt="FACEBOOK"/></a>
-					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Plus.png" alt="GOOGLE PLUS"/></a>
-					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Twitter.png" alt="TWITTER"/></a>
-					<a class="socialMedia" href="" target="_blank"><img src="../../Images/SocialMediaIcons/Pinterest.png" alt="PINTEREST"/></a>
+					<table>
+						<tr>
+							<td colspan="2"><h2>Social media:</h2><br/><br/></td>
+						</tr>
+							<!-- GRID OF IMAGES-->
+						<tr>
+							<td><a href="https://www.facebook.com/pages/Leskommer/738592899593662" target="_blank"><img src="../Images/SocialMediaIcons/Facebook.png" alt="FACEBOOK"/></a></td>
+							<td><a href="https://twitter.com/Leskommer" target="_blank"><img src="../Images/SocialMediaIcons/Twitter.png" alt="TWITTER"/></a></td>
+							<!--<td><a href="" target="_blank"><img src="../Images/SocialMediaIcons/Plus.png" alt="GOOGLE PLUS"/></a></td>
+							<td><a href="" target="_blank"><img src="../Images/SocialMediaIcons/Pinterest.png" alt="PINTEREST"/></a></td>-->
+						</tr>
+					</table>
 				</div>
 			</td>
 		</tr>
@@ -44,27 +50,35 @@
 <?php 
     if(isset($_POST['submit']))
     {
-        $serverMail = "info@leskommer.co.za"; // This is the server's mail address
-	//$serverMail = $_POST['email'];
-        $userMail = $_POST['email']; // this is the sender's Email address
-        $time = date("Ymd:hisa");
-	$name = $_POST['name'];
-        $toServerSubject = "Enquiry by User";
-        $toUserSubject = "Enquiry to Leskommer";
-        $question = $_POST['question'];
-        $msgToServer = $name . " wrote the following:\n\n" . $question;
-        $msgToUser = $name . ", here is a copy of your message to the folks at Leskommer:\n\n" . $question;
-        
-        //Create textfile that stores user data
-        $myfile = fopen("../Correspondence/".$name.$time.".txt", "w") or die("Unable to open file!");
-        $txt = "Name: ".$name."\n Email: ".$userMail."\n Question: ".$question;
-        fwrite($myfile, $txt);
-        fclose($myfile);
+	if (!empty($_POST['name']) && !empty($_POST['question']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+	{
+		$serverMail = "info@leskommer.co.za"; // This is the server's mail address
+		//$serverMail = $_POST['email'];
+		$userMail = $_POST['email']; // this is the sender's Email address
+		$time = date("Ymd:hisa");
+		$name = $_POST['name']; // this is the user's name
+		$toServerSubject = "Enquiry by User";
+		$toUserSubject = "Enquiry to Leskommer";
+		$question = $_POST['question']; // this is the user's question
+		$msgToServer = $name . " wrote the following:\n\n" . $question;
+		$msgToUser = $name . ", here is a copy of your message to the folks at Leskommer:\n\n" . $question;
+		
+		//Create textfile that stores user data
+		$myfile = fopen("../Correspondence/".$name.$time.".txt", "w") or die("Unable to open file!");
+		$txt = "Name: ".$name."\n Email: ".$userMail."\n Question: ".$question;
+		fwrite($myfile, $txt);
+		fclose($myfile);
 
-        //Sending the email
-        $toServerHeader = "From: $userMail";
-        $toUserHeader = "From: $serverMail";
-        mail($serverMail, $toServerSubject, $msgToServer, $toServerHeader); // sends a copy of the message to the server
-        mail($userMail, $toUserSubject, $msgToUser, $toUserHeader); // sends a copy of the message to the user
+		//Sending the email
+		$toServerHeader = "From: $userMail";
+		$toUserHeader = "From: $serverMail";
+		mail($serverMail, $toServerSubject, $msgToServer, $toServerHeader); // sends a copy of the message to the server
+		mail($userMail, $toUserSubject, $msgToUser, $toUserHeader); // sends a copy of the message to the user
+		echo "<script type='text/javascript'>alert('Thank you for your query, it will be processed soon.');</script>";
+	}
+	else
+	{
+		echo "<script type='text/javascript'>alert('Failure to submit query - some fields are not completed.');</script>";
+	}
      }
 ?>
