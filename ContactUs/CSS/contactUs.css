@@ -13,6 +13,7 @@
 h1
 {
 	color: gainsboro;
+	text-align: center;
 }
 
 .content .contentTable
@@ -48,7 +49,6 @@ h1
 	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 
-	/*margin-left: 3vmax;*/
 	padding-top: 2vmax;
 	padding-bottom: 2vmax;
 	padding-left: 2vmax;
@@ -94,11 +94,8 @@ textarea
 
 input[type="text"], textarea 
 {
-
-  /*background-color : #d1d1d1; */
-  background-color : #939393;
-  color: white;
-
+	background-color : #616161;
+	color: white;
 }
 
 #name
