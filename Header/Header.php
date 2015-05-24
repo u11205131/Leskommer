@@ -19,9 +19,10 @@
 					?>
 				</td>
 				<!--<td class="extra" align="center">-->
-				<td class="logo" align="center">
+				<td class="account" align="center">
 					<!-- EXTRA LINKS, SOCIAL MEDIA OR ACCOUNTS -->
-					<a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a>
+					<?php include "../Header/login.php" ?>
+					<!--<a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a>-->
 				</td>
 			</tr>
 		</table>

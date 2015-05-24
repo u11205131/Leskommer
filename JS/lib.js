@@ -24,44 +24,21 @@ function out(m){
 }
 
 /*DOCUMENT CONSTRUCTORS*/
-//Creates an element of any type and hyrarchy
-/*function create(){
-	info("Arguments adding");
-	var hyrarchy = [];
+//CONSTANTS
+var BR = "br";
+var DIV = "div";
+var FORM = "form";
+var INPUT = "input";
+var LABEL = "label";
+var TABLE = "table";
+var TR = "tr";
+var TD = "td";
+var CLASS = "class";
+var A = "a";
+var HREF = "href";
+var BUTTON = "button";
 
-	for(var i = arguments.length-1; i >= 0; i--){
-		if(arguments[i][0] == "Text"){
-			var txt = createText(arguments[i][1]);
-			hyrarchy.push(txt);
-		}
-		if(arguments[i][0] == "Elem"){
-			var el = createElement(arguments[i][1]);
-			if(arguments[i].length > 2){
-				for(var k = 2; k < arguments[i].length; k+=2){
-					el.setAttribute(arguments[i][k], arguments[i][k+1]);
-				}
-			}
-			hyrarchy.push(el);
-		}
-	}
-	out(hyrarchy);
-	for(var i = 0; i < hyrarchy.length-1; i++){
-		hyrarchy[i+1].appendChild(hyrarchy[i]);
-	}
-
-	info("Arguments added");
-
-	return hyrarchy[hyrarchy.length-1]
-}
-
-function createElement(el){
-	return document.createElement(el);
-}
-
-function createText(text){
-	return document.createTextNode(text);
-}*/
-
+//Creates an element of any type with innerHTML
 function createElement(el){
 	var element;
 	if(el == "Text")
@@ -70,7 +47,10 @@ function createElement(el){
 		element = document.createElement(el);
 		if(arguments.length > 1){
 			for(var i = 1; i < arguments.length; i++){
-				element.setAttribute(arguments[i][0], arguments[i][1]);
+				if(typeof arguments[i] === 'string'){
+					element.innerHTML += arguments[i];
+				}else
+					element.setAttribute(arguments[i][0], arguments[i][1]);
 			}
 		}
 	}

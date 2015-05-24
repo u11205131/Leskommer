@@ -4,13 +4,6 @@
 	width: 100%;
 }
 
-.content div
-{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 h1 
 {
 	color: gainsboro;
@@ -28,11 +21,10 @@ h2
 	margin-right: auto;
 	margin-top: 5vmax;
 	padding-left: 1.8vmax;
-	width: 100%;
 }
 
 
-.content table div
+table div
 {
 	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
 	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
@@ -46,22 +38,15 @@ h2
 	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
 
-	height: 20vmax;
-	width: 13vmax;
+	height: 12vmax;
+	width: 8vmax;
 	padding: 2vmax;
 	margin-right: 2vmax;
 
 	text-align: center;
 }
 
-.content img
-{
-	width: 70%;
-	position: relative;
-	top: 1vmax;
-}
-
 p
 {
-	margin-top: 2vmax;
+	margin-top: 8vmax;
 }
