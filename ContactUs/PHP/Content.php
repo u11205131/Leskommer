@@ -62,19 +62,44 @@
 		$question = $_POST['question']; // this is the user's question
 		$msgToServer = $name . " wrote the following:\n\n" . $question;
 		$msgToUser = $name . ", here is a copy of your message to the folks at Leskommer:\n\n" . $question;
+                
+                //SQL Injection prevention
+                $name = mysql_real_escape_string($name);
+                $userMail = mysql_real_escape_string($userMail);
+                $time = mysql_real_escape_string($time);
+                $question = mysql_real_escape_string($question);
 		
 		//Create textfile that stores user data
+                /*
 		$myfile = fopen("../Correspondence/".$name.$time.".txt", "w") or die("Unable to open file!");
 		$txt = "Name: ".$name."\n Email: ".$userMail."\n Question: ".$question;
 		fwrite($myfile, $txt);
-		fclose($myfile);
-
+		fclose($myfile);*/
+                
+                //Write data to DB
+                $servername = "leskommer.co.za";
+                $username = "leskohhl_website";
+                $password = "eishkommer@DB";
+                $dbname = "leskohhl_Leskommer";
+                
+                // Create connection
+                $conn = mysql_connect($servername, $username, $password) or die ("Error connecting to mysql server: ".mysql_error());
+                // Select DB
+                mysql_select_db($dbname, $conn) or die ("Error selecting specified database: ".mysql_error());
+                
+                //Insert data to Table
+                $sql = "INSERT INTO `Feedback` (`ID`, `Name`, `Email`, `Timestamp`) VALUES (NULL, '$name','$userMail','$time');";
+                $result = mysql_query($sql);
+                
+                mysql_close($conn);
+                
 		//Sending the email
 		$toServerHeader = "From: $userMail";
 		$toUserHeader = "From: $serverMail";
 		mail($serverMail, $toServerSubject, $msgToServer, $toServerHeader); // sends a copy of the message to the server
 		mail($userMail, $toUserSubject, $msgToUser, $toUserHeader); // sends a copy of the message to the user
 		echo "<script type='text/javascript'>alert('Thank you for your query, it will be processed soon.');</script>";
+                 
 	}
 	else
 	{
