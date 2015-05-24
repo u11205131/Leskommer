@@ -200,27 +200,3 @@ input[type="radio"]
 	width: 1vmax;
 	margin-left: 2vmax;
 }
-
-/*ROELOF ADDED NEW*/
-.imgHolder{
-	width: 25%;
-	height: 50%;
-	position: absolute;
-	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
-	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
-	background-attachment: fixed;
-	background-position: bottom; 
-	background-repeat: no-repeat;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-radius: 5px;
-
-	-moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
-	-webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
-	box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
-}
-.close{
-	/*position: relative;*/
-	width: 2.5vmax;
-	height: 2.5vmax;
-	left: 50%;
-}

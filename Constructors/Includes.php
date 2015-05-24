@@ -1,16 +1,13 @@
 <!-- CONSTRUCTORS -->
 <link rel="stylesheet" type="text/css" href="../CSS/style.css">
 <?php 
-
+	include "../Constructors/connectDB.php";
 	include "../Constructors/NavigationConstructor.php";
 	include "../Constructors/FooterConstructor.php";
-	include "../Constructors/connectDB.php";
-    //connect();
 ?>
 
 <!-- Libraries -->
 <script src="../JS/jquery-1.11.2.min.js"></script>
-<script type="../JS/draggable.min.js"></script>
 <script src="../JS/jquery.disablescroll.min.js"></script>
 <script src="../JS/lib.js"></script>
 <script src="../Header/Header.js"></script>
