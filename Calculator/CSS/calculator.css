@@ -85,6 +85,11 @@ h1
 	padding-right: 1vmax;
 }
 
+form label
+{
+	color: rgb(0,255,255);
+}
+
 @-moz-document url-prefix() 
 { 
 	#tableReplace
@@ -103,11 +108,6 @@ h1
 		font-family: Blackout Midnight;
 		padding-bottom: 3.0vmax;
 		font-weight: normal;
-	}
-
-	.tab th
-	{
-		color: rgb(0,255,255);
 	}
 
 	#tableReplace td
@@ -144,11 +144,7 @@ h1
 	    letter-spacing: 0.1vmax;
 		font-family: Blackout Midnight;
 		padding-bottom: 2.5vmax;
-	}
-
-	.tab th
-	{
-		color: rgb(0,255,255);
+		font-weight: normal;
 	}
 
 	#tableReplace td
