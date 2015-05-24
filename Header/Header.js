@@ -151,3 +151,48 @@ function login(){
 	tbl.appendChild(tr2);
 	$(".account").append(tbl);*/
 }
+
+function loadshedding(){
+	// *******************************************************
+	// Get Load Shed Status from Eskom 
+	// CM Oelofse
+	// 19/05/2015 
+	// *******************************************************
+	$.ajaxSetup({
+	    scriptCharset: "utf-8", //or "ISO-8859-1"
+	    contentType: "application/json; charset=utf-8"
+	});
+
+	$.getJSON('http://whateverorigin.org/get?url=' + 
+	    encodeURIComponent('http://loadshedding.eskom.co.za/LoadShedding/getstatus') + '&callback=?',
+	    function (data) {
+		console.log("> ", data);
+
+		//If the expected response is text/plain
+		$("#lsstatus").html("data: " + data.contents);
+
+		//If the expected response is JSON
+		var response = $.parseJSON(data.contents);
+		response = response - 1;
+		//alert("Load Shed Status: " + response);
+		if(response == 0) {
+			document.getElementById("lsstatus").innerHTML = "There is currently no Load Shedding in progress!";
+			document.getElementById("lsstatus").className = "no_loadshedding";
+		};
+		
+		if(response == 1) {
+			document.getElementById("lsstatus").innerHTML = "Load Shedding Stage 1 is in progress!";
+			document.getElementById("lsstatus").className = "loadshedding";
+		};
+		
+		if(response == 2) {
+			document.getElementById("lsstatus").innerHTML = "Load Shedding Stage 2 is in progress!";
+			document.getElementById("lsstatus").className = "loadshedding";				
+		};
+		
+		if(response == 3) {
+			document.getElementById("lsstatus").innerHTML = "Load Shedding Stage 3 is in progress!";
+			document.getElementById("lsstatus").className = "loadshedding";				
+		};
+	});
+}

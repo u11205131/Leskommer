@@ -28,6 +28,16 @@
 					<!--<a href="http://leskommer.co.za"><img src="../Images/Logo2TransparentSmallTest3.png" alt="LESKOMMER_LOGO" width="50px"/></a>-->
 				</td>
 			</tr>
+			<tr>
+				<td colspan = "3">
+					<div id="status" class="noloadshedStatus">
+						<p>
+							<img id="loadshedstageimg" class="hidden" onload="loadshedding()" src="../Images/bgNoLoadShed.jpg" style="display: none;">
+							<span id="lsstatus" style="font-size:18px; font-weight:bold"></span>
+						</p>
+					</div>
+				</td>
+			</tr>
 		</table>
 	</div>
 

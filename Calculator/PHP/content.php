@@ -20,22 +20,27 @@
 								<td>
 									<?php
 										//execute the SQL query and return records
-										$test = "adminjohan@leskommer.o.za";
-										$result = mysql_query("SELECT Type FROM Products");
-										//~ $row = mysql_fetch_row($result);
-										//~ echo $row[0];
+										$result = mysql_query("SELECT Type, Wattage FROM Products");
+										$wattage = "";
 										
-										echo "<select name=\"lights\">";
+										echo "<select id=\"light\" name=\"lights\">";
 											while ($row = mysql_fetch_array($result)) {
-												//~ echo "ID:".$row{'ID'}."<br/>Name: ".$row{'Name'}."<br/>Email: ". $row{'Email'}."<br/>";
-												echo "<option value=\"".$row{'Type'}."\">".$row{'Type'}."</option>";
+												echo "<option value=\"" . $row{'Type'} . "\">" . $row{'Type'} . "</option>";
+												
+												$temp = json_decode($row{'Wattage'});
+												
+												for ($x = 0; $x < count($temp); ++$x)
+													$wattage = $wattage . " " . $temp[$x];
+												
+												$wattage = $wattage . "@";
 											}
-											
 										echo "</select>";
+										
+										echo "<script type=\"text/javascript\">" . "setWatts('$wattage');" . "</script>";
 									?>
 								</td>
 								<td>
-									<select name="watts">
+									<select id="watt" name="watts">
 										<option value="15">15</option>
 										<option value="30">30</option>
 										<option value="50">50</option>
