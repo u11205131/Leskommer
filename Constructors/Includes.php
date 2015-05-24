@@ -1,11 +1,9 @@
 <!-- CONSTRUCTORS -->
 <link rel="stylesheet" type="text/css" href="../CSS/style.css">
 <?php 
-
+	include "../Constructors/connectDB.php";
 	include "../Constructors/NavigationConstructor.php";
 	include "../Constructors/FooterConstructor.php";
-	include "../Constructors/connectDB.php";
-    connect();
 ?>
 
 <!-- Libraries -->

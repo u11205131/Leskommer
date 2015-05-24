@@ -10,11 +10,14 @@ function calcReplaceItems(el){
 	var time = document.getElementsByName("hoursOp")[0].value;
 	
 	var kWh = watt/1000*time;
+	kWh = kWh.toFixed(2);
 	var cost = kWh*RATE*30;
+	cost = cost.toFixed(2);
 	var save = 6/1000*time*RATE*30;
+	save = save.toFixed(2);
 	var savings = cost - save;
 	
-	var replacement = "LED: " + 6/1000*time + "kWh @ R" + save.toFixed(2);
+	var replacement = "LED: " + 6/1000*time + "kWh @ R" + save;
 	
 	var tr = createElement("tr");
 
@@ -23,7 +26,7 @@ function calcReplaceItems(el){
 	tdRem.appendChild(imgRem);
 
 	var tdName = createElement("td");
-	var txtName = createElement("Text", type + ": " + kWh + "kWh @ R" + cost.toFixed(2));
+	var txtName = createElement("Text", type + ": " + kWh + "kWh @ R" + cost);
 	tdName.appendChild(txtName);
 
 	var tdReplace = createElement("td");
@@ -31,7 +34,7 @@ function calcReplaceItems(el){
 	tdReplace.appendChild(txtReplace);
 
 	var tdMoney = createElement("td");
-	var txtMoney = createElement("Text", "R" + savings.toFixed(2));
+	var txtMoney = createElement("Text", "R" + savings);
 	tdMoney.appendChild(txtMoney);
 
 	tr.appendChild(tdRem);

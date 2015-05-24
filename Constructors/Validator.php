@@ -1,4 +1,5 @@
 <?php
+	include "connectDB.php";
 	if(isset($_SESSION['username'])){
 		
 	}
@@ -11,10 +12,10 @@
 
 	function login($user, $pass){
 		//TEST LOGIN
-		$result = mysql_query("SELECT * FROM users WHERE Email LIKE '$user' AND Password LIKE '$pass'")
+		$result = mysql_query("SELECT * FROM Users WHERE Email LIKE '$user' AND Password LIKE '$pass' LIMIT 1")
 			or die("Error with Query");
 		if(mysql_num_rows($result) < 1) {
-		    echo false;
+			echo false;
 		}
 		else echo true;
 	}

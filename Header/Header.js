@@ -29,7 +29,7 @@ function register(){
 }
 
 function startRegisterScreen(){
-	//email, password, munisipality
+	//email, password, municipality
 	var cover = createElement(DIV, [CLASS, "coverDIV "]);
 	var tbl = createElement(TABLE, [CLASS, "registerWindow"], ["align", "center"]);
 	var tr = createElement(TR);
@@ -45,7 +45,7 @@ function startRegisterScreen(){
 	var tdEmail = createElement(TD, ["colspan", "2"], ["align", "center"]);
 	var tdPassword = createElement(TD, ["colspan", "2"], ["align", "center"]);
 	var tdPasswordVerify = createElement(TD, ["colspan", "2"], ["align", "center"]);
-	var tdMunisipality = createElement(TD, ["colspan", "2"], ["align", "center"]);
+	var tdMunicipality = createElement(TD, ["colspan", "2"], ["align", "center"]);
 	var tdBTNComplete = createElement(TD, ["align", "right"]);
 	var tdBTNBack = createElement(TD, ["align", "left"]);
 
@@ -69,8 +69,8 @@ function startRegisterScreen(){
 	var inputPasswordVerify = createElement(INPUT, ["type", "password"], ["placeholder", "Verify Password"], ["id", "passwordVerify"], [CLASS, "register"]);
 	tdPasswordVerify.appendChild(inputPasswordVerify);
 
-	var inputMunisipality = createElement(INPUT, ["type", "text"], ["placeholder", "Munisipality"], ["id", "munisipality"], [CLASS, "register"]);
-	tdMunisipality.appendChild(inputMunisipality);
+	var inputMunicipality = createElement(INPUT, ["type", "text"], ["placeholder", "Municipality"], ["id", "municipality"], [CLASS, "register"]);
+	tdMunicipality.appendChild(inputMunicipality);
 
 	var completeBTN = createElement("button", "Complete", [CLASS, "completeBTN"]);
 	var returnBTN = createElement("button", "Back", [CLASS, "registerBackBTN"]);
@@ -83,7 +83,7 @@ function startRegisterScreen(){
 	tr3.appendChild(tdEmail);
 	tr4.appendChild(tdPassword);
 	tr5.appendChild(tdPasswordVerify);
-	tr6.appendChild(tdMunisipality);
+	tr6.appendChild(tdMunicipality);
 	tr7.appendChild(tdBTNComplete);
 	tr7.appendChild(tdBTNBack);
 

@@ -18,13 +18,21 @@
 						<div class="category">
 							<tr>
 								<td>
-									<select name="lights">
-										<option value="Incandescent">Incandescent</option>
-										<option value="Halogen">Halogen</option>
-										<option value="Fluorescent">Fluorescent</option>
-										<option value="Compact Fluorescent">Compact Fluorescent</option>
-										<option value="LED">LED</option>
-									</select>
+									<?php
+										//execute the SQL query and return records
+										$test = "adminjohan@leskommer.o.za";
+										$result = mysql_query("SELECT Type FROM Products");
+										//~ $row = mysql_fetch_row($result);
+										//~ echo $row[0];
+										
+										echo "<select name=\"lights\">";
+											while ($row = mysql_fetch_array($result)) {
+												//~ echo "ID:".$row{'ID'}."<br/>Name: ".$row{'Name'}."<br/>Email: ". $row{'Email'}."<br/>";
+												echo "<option value=\"".$row{'Type'}."\">".$row{'Type'}."</option>";
+											}
+											
+										echo "</select>";
+									?>
 								</td>
 								<td>
 									<select name="watts">
