@@ -10,14 +10,11 @@ function calcReplaceItems(el){
 	var time = document.getElementsByName("hoursOp")[0].value;
 	
 	var kWh = watt/1000*time;
-	kWh = kWh.toFixed(2);
 	var cost = kWh*RATE*30;
-	cost = cost.toFixed(2);
 	var save = 6/1000*time*RATE*30;
-	save = save.toFixed(2);
 	var savings = cost - save;
 	
-	var replacement = "LED: " + 6/1000*time + "kWh @ R" + save;
+	var replacement = "LED: " + 6/1000*time + "kWh @ R" + save.toFixed(2);
 	
 	var tr = createElement("tr");
 
@@ -26,7 +23,7 @@ function calcReplaceItems(el){
 	tdRem.appendChild(imgRem);
 
 	var tdName = createElement("td");
-	var txtName = createElement("Text", type + ": " + kWh + "kWh @ R" + cost);
+	var txtName = createElement("Text", type + ": " + kWh + "kWh @ R" + cost.toFixed(2));
 	tdName.appendChild(txtName);
 
 	var tdReplace = createElement("td");
@@ -34,7 +31,7 @@ function calcReplaceItems(el){
 	tdReplace.appendChild(txtReplace);
 
 	var tdMoney = createElement("td");
-	var txtMoney = createElement("Text", "R" + savings);
+	var txtMoney = createElement("Text", "R" + savings.toFixed(2));
 	tdMoney.appendChild(txtMoney);
 
 	tr.appendChild(tdRem);
@@ -50,3 +47,27 @@ function removeItemRow(el){
 	var table = tr.parentNode;
 	table.removeChild(tr);
 }
+/*ROELOF ADDED NEW*/
+$(document).on("click", "#displayDetails", function(e){
+	e.preventDefault();
+	var lightName = document.getElementsByName("lights")[0].value;
+
+	debug("Display Details");
+	var bg = createElement(DIV, [CLASS, "coverDIV"]);
+	var close = createElement(IMG, [SRC, "../Images/cross.png"], [CLASS, "close"]);
+	var product = createElement(IMG, [SRC, "../Images/Products/"+lightName+".jpg"]);
+	var productName = createElement(H6, lightName);
+	var holder = createElement(DIV, [CLASS, "imgHolder"]);
+	$(holder).css("top", $( window ).height()*0.50);
+	$(holder).css("left", $( window ).width()*0.25);
+		
+	holder.appendChild(close);
+	holder.appendChild(product);
+	holder.appendChild(productName);
+	bg.appendChild(holder);
+	document.getElementsByTagName("body")[0].appendChild(bg);
+});
+$(document).on("click", ".close", function(e){
+	e.preventDefault();
+	$(".coverDIV").remove();
+});

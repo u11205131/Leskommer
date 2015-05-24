@@ -37,6 +37,12 @@ var CLASS = "class";
 var A = "a";
 var HREF = "href";
 var BUTTON = "button";
+var H6 = "h6";
+var IMG = "img";
+var SRC = "src";
+var WIDTH = "width";
+var HEIGHT = "height";
+
 
 //Creates an element of any type with innerHTML
 function createElement(el){
