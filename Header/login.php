@@ -1,4 +1,4 @@
-<form>
+<form class="loginForm">
 	<table class="loginTable">
 		<tr>
 			<td colspan="2"><input class="login" id="loginUsername" type="text" placeholder="Username"/></td>

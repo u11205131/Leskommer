@@ -1,5 +1,5 @@
-debug("Header.js included");
-
+//debug("Header.js included");
+validate(false);
 $(document).ready(function(){
    $(".registerBTN").click(function(e){
    		e.preventDefault();
@@ -7,10 +7,7 @@ $(document).ready(function(){
    });
    $(".loginBTN").click(function(e){
    		e.preventDefault();
-   		if(validate()){
-   			login();
-   		};
-   		
+   		validate(true);   		
    });
 })
 $(document).on("click", ".completeBTN", function(e){
@@ -23,6 +20,18 @@ $(document).on("click", ".registerBackBTN", function(e){
 	e.preventDefault();
 	returnFromRegisterScreen();
 });
+$(document).on("click", ".logOutBTN", function(e){
+	e.preventDefault();
+	logOut();
+});
+$(document).on("click", ".accountBTN", function(e){
+	e.preventDefault();
+	gotoAccount();
+});
+
+function gotoAccount(){
+	window.location.href = "../Account/Account.php";
+}
 
 function register(){
 	startRegisterScreen();
@@ -119,37 +128,100 @@ function returnFromRegisterScreen(){
 		$(".coverDIV").remove();
 	});	
 }
-function validate(){
-	return true;
+function validate(clicked){
+	var dat = {type: "validate"};
+	$.ajax({
+          type: 'POST',
+          url: '../Constructors/Validator.php',
+          data: dat,
+          cache: false,
+          success: function(ret) {
+          	debug("TEST RETURN : " + ret);
+          	if(parseInt(ret) == 0){
+         		debug("DONT");
+          		//return true;
+          		if(clicked){
+          			login();
+          		}
+          	}
+          	else {
+
+          		$(".account .loginForm").hide();
+          		//$(".account").children().remove();
+				//BUILD LOGIN
+
+				var tbl = createElement(TABLE, [CLASS, "loggedInAccount"]);
+				var tr = createElement(TR);
+				var td = createElement(TD, "Welcome, " + ret, [CLASS, "loggedInName"]);
+				var tr2 = createElement(TR);
+				var td2 = createElement(TD);
+				var account = createElement(BUTTON, "Account", [CLASS, "accountBTN"]);
+				var logOut = createElement(BUTTON, "Log Out", [CLASS, "logOutBTN"]);
+
+				td2.appendChild(account);
+				td2.appendChild(logOut);
+				tr2.appendChild(td2);
+				tr.appendChild(td);
+				tbl.appendChild(tr);
+				tbl.appendChild(tr2);
+				$(".account").append(tbl);
+          		return false;
+          	}
+          }
+         });
 }
 function login(){
 	
 	var name = $("#loginUsername").val();
 	var pass = $("#loginPassword").val();
-	$.post("../Constructors/Validator.php", {type:'post', username:name, password:pass}, function(d){
-		//HANDLE LOGIN
-		debug(d);
+	var dat = {type: "post", username: name, password:pass};
+	debug(dat);
+
+	$.ajax({
+          type: 'POST',
+          url: '../Constructors/Validator.php',
+          data: dat,
+          cache: false,
+          success: function(ret) {
+          	//HANDLE LOGIN
+			debug("TEST RETURN : " + ret);
+			if(parseInt(ret) > 0){
+				$(".account .loginForm").hide();
+				//$(".account").children().remove();
+				//BUILD LOGIN
+
+				var tbl = createElement(TABLE, [CLASS, "loggedInAccount"]);
+				var tr = createElement(TR);
+				var td = createElement(TD, "Welcome, " + name, [CLASS, "loggedInName"]);
+				var tr2 = createElement(TR);
+				var td2 = createElement(TD);
+				var account = createElement(BUTTON, "Account", [CLASS, "accountBTN"]);
+				var logOut = createElement(BUTTON, "Log Out", [CLASS, "logOutBTN"]);
+
+				td2.appendChild(account);
+				td2.appendChild(logOut);
+				tr2.appendChild(td2);
+				tr.appendChild(td);
+				tbl.appendChild(tr);
+				tbl.appendChild(tr2);
+				$(".account").append(tbl);
+  			}
+    	}
 	});
-
-	//$(".account").children().remove();
-	//BUILD LOGIN
-	//var name = "Name";
-
-	/*var tbl = createElement(TABLE, [CLASS, "loggedInAccount"]);
-	var tr = createElement(TR);
-	var td = createElement(TD, "Welcome, " + name, [CLASS, "loggedInName"]);
-	var tr2 = createElement(TR);
-	var td2 = createElement(TD);
-	var account = createElement(BUTTON, "Account", [CLASS, "accountBTN"]);
-	var logOut = createElement(BUTTON, "Log Out", [CLASS, "logOutBTN"]);
-
-	td2.appendChild(account);
-	td2.appendChild(logOut);
-	tr2.appendChild(td2);
-	tr.appendChild(td);
-	tbl.appendChild(tr);
-	tbl.appendChild(tr2);
-	$(".account").append(tbl);*/
+};
+function logOut(){
+	var dat = {type: "logout"};
+	$.ajax({
+		type: 'POST',
+		url: '../Constructors/Validator.php',
+		data: dat,
+		cache: false,
+		success: function(ret) {
+			debug("logout");
+			$(".account .loggedInAccount").hide();
+			$(".account .loginForm").show();
+		}
+	});
 }
 
 function loadshedding(){
@@ -158,7 +230,7 @@ function loadshedding(){
 	// CM Oelofse
 	// 19/05/2015 
 	// *******************************************************
-	$.ajaxSetup({
+	/*$.ajaxSetup({
 	    scriptCharset: "utf-8", //or "ISO-8859-1"
 	    contentType: "application/json; charset=utf-8"
 	});
@@ -194,5 +266,5 @@ function loadshedding(){
 			document.getElementById("lsstatus").innerHTML = "Load Shedding Stage 3 is in progress!";
 			document.getElementById("lsstatus").className = "loadshedding";				
 		};
-	});
+	});*/
 }

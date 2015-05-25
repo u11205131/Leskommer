@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!-- CONSTRUCTORS -->
 <link rel="stylesheet" type="text/css" href="../CSS/style.css">
 <?php 
@@ -18,6 +20,10 @@
 	<script src="../Calculator/JS/buttonHandler.js"></script>
  	<script src="../Calculator/JS/calculator.js"></script>
 
+<?php } ?>
+
+<?php if($page == "Account"){ ?>
+	<script src="../Account/JS/Account.js"></script>
 <?php } ?>
 
 <!-- CSS -->
