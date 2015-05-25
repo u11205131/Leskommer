@@ -161,7 +161,7 @@ img
      color: black;
 }
 .loggedInAccount{
-    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/cityEditBlur.jpg");
+    /*background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/cityEditBlur.jpg");
     background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/cityEditBlur.jpg");
     background-attachment: fixed;
     background-position: bottom; 
@@ -171,7 +171,12 @@ img
 
     -moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
     -webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
-    box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);*/
+    font-size: 1.5vmax;
+    font-family: Blackout Midnight;
+    letter-spacing: 0.1vmax;
+    color: rgb(0,255,255);
+    font-weight: normal;
 
     margin-bottom: 1em;
     padding: 1em;
