@@ -1,25 +1,19 @@
 var RATE = 1.50;
 var WATTS = [""];
+var SIMILAR = [""];
 
 function calcReplaceItems(el){
 	//SEND CALCULATE REQUEST
 
 	//out(el.id);
-	
 	var type = document.getElementsByName("lights")[0].value;
-	var watt = document.getElementsByName("watts")[0].value;
-	var time = document.getElementsByName("hoursOp")[0].value;
+	var typeIndex = document.getElementsByName("lights")[0].selectedIndex;
+	var watt = parseFloat(document.getElementsByName("watts")[0].value);
+	var time = parseFloat(document.getElementsByName("hoursOp")[0].value);
 	
 	var kWh = watt/1000*time;
-	kWh = kWh.toFixed(2);
 	var cost = kWh*RATE*30;
-	cost = cost.toFixed(2);
-	var save = 6/1000*time*RATE*30;
-	save = save.toFixed(2);
-	savings = savings.toFixed(2);
-	
-	var replacement = "LED: " + (6/1000*time).toFixed(2) + "kWh @ R" + save;
-	
+
 	var tr = createElement("tr");
 
 	var tdRem = createElement("td");
@@ -27,16 +21,65 @@ function calcReplaceItems(el){
 	tdRem.appendChild(imgRem);
 
 	var tdName = createElement("td");
-	var txtName = createElement("Text", type + ": " + kWh + "kWh @ R" + cost);
-	tdName.appendChild(txtName);
+	var txtType = createElement("Text", type + " " + watt + "W: ");
+	var txtDesc = createElement("Text", kWh.toFixed(3) + "kWh @ R" + cost.toFixed(2));
+	tdName.appendChild(txtType);
+	tdName.appendChild(createElement("br"));
+	tdName.appendChild(txtDesc);
 
-	var tdReplace = createElement("td");
-	var txtReplace = createElement("Text", replacement);
-	tdReplace.appendChild(txtReplace);
+	//**************Dropdown of Types**************//
+	var tdReplace = createElement("td", ["id", "testing"]);
 
+	var tempType = document.getElementsByName("lights")[0];
+	var txtTypeReplace = createElement("select", ["onchange", "replaceWatts(this)"], ["class", typeIndex + " " + watt + " " + time]);
+	
+	var tempStr = SIMILAR[typeIndex].substring(SIMILAR[typeIndex].indexOf(watt + ":") + (watt + ":").length);
+	tempStr = tempStr.substring(0, tempStr.indexOf(";"));
+	
+	//~ alert(tempStr);
+	var length = (tempStr.split(",").length);
+	var firstWattage = -1;
+	
+	for (var x = 0; x < length; ++x) {
+		var option = document.createElement('option');
+		option.text = tempStr.substring(0, tempStr.indexOf("-"));
+		option.value = option.text;
+		
+		if (firstWattage == -1)
+			firstWattage = parseFloat(tempStr.substring(tempStr.indexOf("-")+1, tempStr.indexOf(",")));
+		
+		if (tempStr.indexOf(",") != -1)
+			watt = parseFloat(tempStr.substring(tempStr.indexOf("-")+1, tempStr.indexOf(",")));
+		else
+			watt = parseFloat(tempStr.substring(tempStr.indexOf("-")+1));
+		
+		option.text = option.text +  " " + watt + "W";
+		
+		tempStr = tempStr.substring(tempStr.indexOf(",")+1);
+		txtTypeReplace.appendChild(option);
+	}
+	
+	tdReplace.appendChild(txtTypeReplace);
+	tdReplace.appendChild(createElement("br"));
+
+	kWh = firstWattage/1000*time;
+	var save = kWh*RATE*30;
+	
+	var txtReplace = createElement("Text", kWh.toFixed(3) + "kWh @ R" + save.toFixed(2));
+	var txtReplaceP = createElement("p");
+	txtReplaceP.className = "disposeRep";
+	txtReplaceP.appendChild(txtReplace);
+	tdReplace.appendChild(txtReplaceP);
+	//**************END**************//
+
+	var savings = cost - save;
+	
 	var tdMoney = createElement("td");
-	var txtMoney = createElement("Text", "R" + savings);
-	tdMoney.appendChild(txtMoney);
+	var txtMoney = createElement("Text", "R" + savings.toFixed(2));
+	var txtMoneyP = createElement("p");
+	txtMoneyP.className = "disposeSave";
+	txtMoneyP.appendChild(txtMoney);
+	tdMoney.appendChild(txtMoneyP);
 
 	tr.appendChild(tdRem);
 	tr.appendChild(tdName);
@@ -44,6 +87,8 @@ function calcReplaceItems(el){
 	tr.appendChild(tdMoney);
 
 	document.getElementById("tableReplace").appendChild(tr);
+	
+	calcTotal();
 }
 
 function removeItemRow(el){
@@ -52,17 +97,75 @@ function removeItemRow(el){
 	table.removeChild(tr);
 }
 
-function setWatts(input){
-	var temp = input;
+function calcTotal() {
+	var element = document.getElementsByClassName("disposeSave");
+	var total = 0.0;
+	for (var x = 0; x < element.length; ++x) {
+		total += parseFloat(element[x].innerHTML.substring(1));
+	}
+	
+	document.getElementById("totalSum").innerHTML = "Total Savings: R" + total.toFixed(2);
+}
+
+function replaceWatts(el){
+	
+	var tempStr = el.className;
+	var type = parseInt(tempStr.substring(0, tempStr.indexOf(" ")));
+	tempStr = tempStr.substring(tempStr.indexOf(" ") + 1);
+	var selected = el.value;
+	var watt = parseFloat(tempStr.substring(0, tempStr.indexOf(" ")));
+	tempStr = tempStr.substring(tempStr.indexOf(" ") + 1);
+	var time = parseFloat(tempStr.substring(0));
+	
+	var kWh = watt/1000*time;
+	var cost = kWh*RATE*30;
+	
+	tempStr = SIMILAR[type].substring(SIMILAR[type].indexOf(watt + ":") + (watt + ":").length);
+	tempStr = tempStr.substring(0, tempStr.indexOf(";"));
+	tempStr = tempStr.substring(tempStr.indexOf(selected)+selected.length+1);
+	
+	if (tempStr.indexOf(",") != -1)
+		var watt = parseFloat(tempStr.substring(0, tempStr.indexOf(",")));
+	else
+		var watt = parseFloat(tempStr.substring(0));
+		
+	kWh = watt/1000*time;
+	var save = kWh*RATE*30;
+	
+	var index = -1;
+	var element = document.getElementsByClassName("disposeRep");
+	for (var x = 0; x < element.length; ++x) {
+		if (el.parentNode === element[x].parentNode)
+			index = x;
+	}
+	element[index].innerHTML = "";
+	element[index].appendChild(createElement("Text", kWh.toFixed(3) + "kWh @ R" + save.toFixed(2)));
+	
+	var savings = cost - save;
+	
+	element = document.getElementsByClassName("disposeSave")[index];
+	element.innerHTML = "";
+	element.appendChild(createElement("Text", "R" + savings.toFixed(2)));
+	
+	calcTotal();
+}
+
+function setWatts(inputWatts, inputSimilar){
+	var temp = inputWatts;
+	var similar = inputSimilar;
+	
 	var length = (temp.split("@").length-1);
 	
 	for (var x = 0; x < length; ++x) {
 		WATTS[x] = temp.substring(1, temp.indexOf("@"));
 		temp = temp.substring(temp.indexOf("@") + 1);
+		
+		SIMILAR[x] = similar.substring(0, similar.indexOf("@"));
+		similar = similar.substring(similar.indexOf("@") + 1);
 	}
 	
-	var element = document.getElementsByName("lights");
-	element[0].setAttribute("onchange", "popWatts()");
+	var element = document.getElementsByName("lights")[0];
+	element.setAttribute("onchange", "popWatts()");
 }
 
 function popWatts(){
@@ -98,8 +201,10 @@ $(document).on("click", "#displayDetails", function(e){
 	var product = createElement(IMG, [SRC, "../Images/Products/"+lightName+".jpg"]);
 	var productName = createElement(H6, lightName);
 	var holder = createElement(DIV, [CLASS, "imgHolder"]);
-	$(holder).css("top", $( window ).height()*0.50);
-	$(holder).css("left", $( window ).width()*0.25);
+	//~ $(holder).css("top", $( window ).height()*0.50);
+	//~ $(holder).css("left", $( window ).width()*0.25);
+	$(holder).css("top", "35vmax");
+	$(holder).css("left", "37vmax");
 		
 	holder.appendChild(close);
 	holder.appendChild(product);

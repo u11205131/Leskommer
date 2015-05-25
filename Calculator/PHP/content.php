@@ -7,9 +7,10 @@
 				<form id="mainCalc">
 					<table>
 						<tr>
-							<th colspan="3">Lights</th>
+							<th colspan="4">Lights</th>
 						</tr>
 							<tr class="tableHeader">
+							<th><!-- DUMMY --></th>
 							<th>Item</th>
 							<th>Watt usage</th>
 							<th>Hours operational</th>
@@ -17,17 +18,21 @@
 						</tr>
 						<div class="category">
 							<tr>
+								<td><button id="displayDetails">?</button></td>
 								<td>
 									<?php
 										//execute the SQL query and return records
-										$result = mysql_query("SELECT Type, Wattage FROM Products");
+										$result = mysql_query("SELECT Type, Wattage, Similar FROM Products");
 										$wattage = "";
+										//~ $similar = "15:TEster-8;";
+										$similar = "";
 										
 										echo "<select id=\"light\" name=\"lights\">";
 											while ($row = mysql_fetch_array($result)) {
 												echo "<option value=\"" . $row{'Type'} . "\">" . $row{'Type'} . "</option>";
 												
 												$temp = json_decode($row{'Wattage'});
+												$similar = $similar . "" . $row{'Similar'} . "@";
 												
 												for ($x = 0; $x < count($temp); ++$x)
 													$wattage = $wattage . " " . $temp[$x];
@@ -36,16 +41,14 @@
 											}
 										echo "</select>";
 										
-										echo "<script type=\"text/javascript\">" . "setWatts('$wattage');" . "</script>";
+										echo "<script type=\"text/javascript\">" . "setWatts('$wattage', '$similar');" . "</script>";
 									?>
 								</td>
 								<td>
 									<select id="watt" name="watts">
-										<option value="15">15</option>
-										<option value="30">30</option>
-										<option value="50">50</option>
-										<option value="60">50</option>
-										<option value="75">75</option>
+										<script type="text/javascript">
+											popWatts();
+										</script>
 									</select>
 								</td>
 								<td>
@@ -57,13 +60,6 @@
 					</table>
 				</form>
 			</div>
-			<div>
-				<form id="extraInfo">
-					<label>Insulation?</label><br>
-					<input type="radio" name="insulation" value="yes"> Yes
-					<input type="radio" name="insulation" value="no"> No
-				</form>
-			</div>
 		</div>
 		<div class="rightColumn" id="replacementItems" >	
 			<table id="tableReplace">
@@ -71,9 +67,10 @@
 					<th><!-- DUMMY --></th>
 					<th>Current Item</th>
 					<th>Replacement Item</th>
-					<th>Money Saved PM</th>
+					<th>Money Saved</th>
 				</tr>
 			</table>
+			<p id="totalSum"></p>
 		</div>
 	</div>
 </div>
