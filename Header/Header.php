@@ -33,7 +33,7 @@
 					<div id="status" class="noloadshedStatus">
 						<p>
 							<img id="loadshedstageimg" class="hidden" onload="loadshedding()" src="../Images/bgNoLoadShed.jpg" style="display: none;">
-							<span id="lsstatus" style="font-size:18px; font-weight:bold"></span>
+							<span id="lsstatus"></span>
 						</p>
 					</div>
 				</td>

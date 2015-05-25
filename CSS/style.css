@@ -114,8 +114,8 @@ img
 
 .registerWindow{
     /*background-color: rgba(0,0,0,0.75);*/
-    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/FooterBGEditBlur.jpg");
-    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/FooterBGEditBlur.jpg");
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/FooterBGEditBlur.jpg");
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/FooterBGEditBlur.jpg");
     background-attachment: fixed;
     background-position: bottom; 
     background-repeat: no-repeat;
@@ -134,12 +134,12 @@ img
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    color: white;
+    color: gainsboro;
     padding: 1vmax;
 }
 
 .completeBTN, .registerBackBTN{
-    background-color : #939393;
+    background-color : #616161;
 
     -moz-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
     -webkit-box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.7);
@@ -149,16 +149,20 @@ img
     margin: 0;
     padding-top: 1vmax;
     padding-bottom: 1vmax;
+
+    color: gainsboro;
 }
 .registerBackBTN{
     margin-left: 0.4vmax;
 }
-.completeBTN:hover, .registerBackBTN:hover{
+.completeBTN:hover, .registerBackBTN:hover
+{
      background-color: rgb(0, 255, 255);
+     color: black;
 }
 .loggedInAccount{
-    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
-    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../Images/cityEditBlur.jpg");
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/cityEditBlur.jpg");
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../Images/cityEditBlur.jpg");
     background-attachment: fixed;
     background-position: bottom; 
     background-repeat: no-repeat;

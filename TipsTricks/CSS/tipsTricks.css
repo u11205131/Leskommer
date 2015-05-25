@@ -8,15 +8,15 @@
 	text-align: center;
 }
 
-h1, h2
+h1
 {
 	color: gainsboro;
 }
 
 h2
 {
-	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
-	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
 	background-attachment: fixed;
 	background-position: bottom; 
 	background-repeat: no-repeat;
@@ -39,8 +39,8 @@ h2
 }
 .tipTable
 {
-	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
-	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
 	background-attachment: fixed;
 	background-position: bottom; 
 	background-repeat: no-repeat;
@@ -56,9 +56,14 @@ h2
 	width: 90%;
 	margin-top: 5vmax;
 	padding-top: 1.5vmax;
-	padding-bottom: 1vmax;
-	padding-left: 0.5vmax;
-	padding-right: 0.5vmax;
+	padding-bottom: 1.5vmax;
+	padding-left: 3vmax;
+	padding-right: 3vmax;
 	list-style-type: none;  
+	text-align: justify;
+}
 
+.tipTable tr td
+{
+	padding-bottom: 1vmax;
 }

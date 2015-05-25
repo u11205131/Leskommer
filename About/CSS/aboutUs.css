@@ -34,8 +34,8 @@ h2
 
 .content table div
 {
-	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
-	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) ,url("../../Images/FooterBGEditBlur.jpg");
 	background-attachment: fixed;
 	background-position: bottom; 
 	background-repeat: no-repeat;
